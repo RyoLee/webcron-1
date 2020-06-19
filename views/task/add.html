@@ -11,7 +11,7 @@
 		
 		<div class="alert alert-danger hide" role="alert"></div>
 
-		<form id="add-task" action="{{urlfor "TaskController.Add"}}" method="post" class="form-horizontal">
+		<form id="add-task" action="/webcron{{urlfor "TaskController.Add"}}" method="post" class="form-horizontal">
 			<fieldset>
 				
 				<div class="control-group">											
@@ -57,7 +57,7 @@
 					<label class="control-label" for="cron_spec">cron表达式</label>
 					<div class="controls">
 						<input type="text" name="cron_spec" class="span6" id="cron_spec" value="">
-						<a href="{{urlfor "HelpController.Index"}}" target="_blank">参见使用帮助</a>
+						<a href="/webcron{{urlfor "HelpController.Index"}}" target="_blank">参见使用帮助</a>
 					</div> <!-- /controls -->				
 				</div> <!-- /control-group -->
 				
@@ -105,7 +105,7 @@
 					
 				<div class="form-actions">
 					<button type="submit" class="btn btn-primary">保 存</button> 
-					<a href="{{urlfor "TaskController.List"}}" class="btn">返 回</a>
+					<a href="/webcron{{urlfor "TaskController.List"}}" class="btn">返 回</a>
 				</div> <!-- /form-actions -->
 			</fieldset>
 		</form>
@@ -120,9 +120,9 @@ $(function () {
 	$("form").submit(function () {
 		$(".alert").hide();
 		$("button[type='submit']").attr('disabled', true);
-		$.post('{{urlfor "TaskController.Add"}}', $(this).serialize(), function (out) {
+		$.post('/webcron{{urlfor "TaskController.Add"}}', $(this).serialize(), function (out) {
 			if (out.status == 0) {
-				window.location.href = '{{urlfor "TaskController.List"}}';
+				window.location.href = '/webcron{{urlfor "TaskController.List"}}';
 			} else {
 				$(".alert").text(out.msg);
 				$(".alert").show();

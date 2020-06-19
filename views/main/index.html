@@ -17,7 +17,7 @@
 				<tbody>
 				{{range $k, $v := .jobs}}
 					<tr>
-						<td><a href="{{urlfor "TaskController.Logs" "id" $v.task_id}}" class="news-item-title">{{$v.task_name}} # {{$v.task_id}}</a></td>
+						<td><a href="/webcron{{urlfor "TaskController.Logs" "id" $v.task_id}}" class="news-item-title">{{$v.task_name}} # {{$v.task_id}}</a></td>
 						<td>{{$v.next_time}}</td>
 					</tr>
 				{{end}}
@@ -39,7 +39,7 @@
 					<li>
 					
 					<div class="news-item-detail"> 
-						<a href="{{urlfor "TaskController.ViewLog" "id" $v.id}}" class="news-item-title">{{$v.task_name}} # {{$v.id}}</a>
+						<a href="/webcron{{urlfor "TaskController.ViewLog" "id" $v.id}}" class="news-item-title">{{$v.task_name}} # {{$v.id}}</a>
 						<p class="news-item-preview">
 						开始时间：{{$v.start_time}} | 执行时间：{{$v.process_time}}秒 | 输出：{{$v.ouput_size}} | 状态：{{if eq $v.status 0}}
 						正常
@@ -75,7 +75,7 @@
 					<li>
 					
 					<div class="news-item-detail"> 
-						<a href="{{urlfor "TaskController.ViewLog" "id" $v.id}}" class="news-item-title">{{$v.task_name}} # {{$v.id}}</a>
+						<a href="/webcron{{urlfor "TaskController.ViewLog" "id" $v.id}}" class="news-item-title">{{$v.task_name}} # {{$v.id}}</a>
 						<p class="news-item-preview">
 						开始时间：{{$v.start_time}} | 执行时间：{{$v.process_time}}秒 | 输出：{{$v.ouput_size}} | 状态：{{if eq $v.status 0}}
 						正常

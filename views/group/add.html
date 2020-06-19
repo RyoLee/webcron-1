@@ -11,7 +11,7 @@
 		
 		<div class="alert alert-danger hide" role="alert"></div>
 
-		<form id="add-task" action="{{urlfor "GroupController.Add"}}" method="post" class="form-horizontal">
+		<form id="add-task" action="/webcron{{urlfor "GroupController.Add"}}" method="post" class="form-horizontal">
 			<fieldset>
 				
 				<div class="control-group">											
@@ -33,7 +33,7 @@
 					
 				<div class="form-actions">
 					<button type="submit" class="btn btn-primary">保 存</button> 
-					<a href="{{urlfor "GroupController.List"}}" class="btn">返 回</a>
+					<a href="/webcron{{urlfor "GroupController.List"}}" class="btn">返 回</a>
 				</div> <!-- /form-actions -->
 			</fieldset>
 		</form>
@@ -48,9 +48,9 @@ $(function () {
 	$("form").submit(function () {
 		$(".alert").hide();
 		$("button[type='submit']").attr('disabled', true);
-		$.post('{{urlfor "GroupController.Add"}}', $(this).serialize(), function (out) {
+		$.post('/webcron{{urlfor "GroupController.Add"}}', $(this).serialize(), function (out) {
 			if (out.status == 0) {
-				window.location.href = '{{urlfor "GroupController.List"}}';
+				window.location.href = '/webcron{{urlfor "GroupController.List"}}';
 			} else {
 				$(".alert").text(out.msg);
 				$(".alert").show();

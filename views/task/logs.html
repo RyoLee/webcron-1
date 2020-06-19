@@ -29,7 +29,7 @@
 			</div>
 			
 			<div class="btn-group">
-				<a href="{{urlfor "TaskController.List"}}" class="btn btn-large"><span class="icon-chevron-left"></span> 返 回</a>
+				<a href="/webcron{{urlfor "TaskController.List"}}" class="btn btn-large"><span class="icon-chevron-left"></span> 返 回</a>
 			</div>
 			
 		</div>
@@ -65,7 +65,7 @@
 					{{end}}
 					</td>
 					<td>
-						<a class="btn btn-info" href="{{urlfor "TaskController.ViewLog"}}?id={{$v.id}}">
+						<a class="btn btn-info" href="/webcron{{urlfor "TaskController.ViewLog"}}?id={{$v.id}}">
 							<i class="icon-comment"></i> 详情
                        </a>					
 					</td>
@@ -96,7 +96,7 @@ function batch(action) {
 		$(".alert").text("请选择要操作的任务");
 		$(".alert").show();
 	} else {
-		var url = "{{urlfor "TaskController.LogBatch"}}";
+		var url = "/webcron{{urlfor "TaskController.LogBatch"}}";
 		$.post(url + "?action=" + action, $("#form-list").serialize(), function(out) {
 			if (out.status != 0) {
 				$(".alert").text(out.msg);

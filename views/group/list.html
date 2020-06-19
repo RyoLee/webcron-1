@@ -22,7 +22,7 @@
 			</div>
 			
 			<div class="btn-group">
-			<a href="{{urlfor "GroupController.Add"}}" class="btn btn-large btn-info"><span class="icon-plus"></span> 新建分组</a>
+			<a href="/webcron{{urlfor "GroupController.Add"}}" class="btn btn-large btn-info"><span class="icon-plus"></span> 新建分组</a>
 			</div>
 			
 		</div>
@@ -46,7 +46,7 @@
 					<td>{{$v.GroupName}}</td>
 					<td>{{$v.Description}}</td>
 					<td>
-						<a class="btn btn-info" href="{{urlfor "GroupController.Edit" "id" $v.Id}}">
+						<a class="btn btn-info" href="/webcron{{urlfor "GroupController.Edit" "id" $v.Id}}">
 							<i class="icon-pencil icon-white"></i> 编辑
 						</a>
 										
@@ -78,7 +78,7 @@ function batch(action) {
 		$(".alert").text("请选择要操作的任务");
 		$(".alert").show();
 	} else {
-		var url = "{{urlfor "GroupController.Batch"}}";
+		var url = "/webcron{{urlfor "GroupController.Batch"}}";
 		$.post(url + "?action=" + action, $("#form-list").serialize(), function(out) {
 			if (out.status != 0) {
 				$(".alert").text(out.msg);

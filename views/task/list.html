@@ -25,11 +25,11 @@
 			</div>
 			
 			<div class="btn-group">
-			<a href="{{urlfor "TaskController.Add"}}" class="btn btn-large btn-info"><span class="icon-plus"></span> 新建任务</a>
+			<a href="/webcron{{urlfor "TaskController.Add"}}" class="btn btn-large btn-info"><span class="icon-plus"></span> 新建任务</a>
 			</div>
 			
 			<div class="btn-group  btn-large" style="float:right">
-			<form method="post" name="s" action="{{urlfor "TaskController.List"}}">
+			<form method="post" name="s" action="/webcron{{urlfor "TaskController.List"}}">
 				<select name="groupid" class="btn-large">
 					<option value="0">全部分组</option>
 					{{range $k, $v := .groups}}
@@ -74,21 +74,21 @@
 					<td>{{$v.next_time}}</td>
 					<td>
 						{{if eq $v.status 0}}
-						<a class="btn btn-danger" href="{{urlfor "TaskController.Start"}}?id={{$v.id}}">
+						<a class="btn btn-danger" href="/webcron{{urlfor "TaskController.Start"}}?id={{$v.id}}">
 							<span class="icon-play-circle icon-white"></span> 激活
 						</a>
 						{{else}}
-						<a class="btn btn-success" href="{{urlfor "TaskController.Pause"}}?id={{$v.id}}">
+						<a class="btn btn-success" href="/webcron{{urlfor "TaskController.Pause"}}?id={{$v.id}}">
 							<span class="icon-ban-circle icon-white"></span> 暂停
 						</a>
 						{{end}}
-						<a class="btn btn-info" href="{{urlfor "TaskController.Edit"}}?id={{$v.id}}">
+						<a class="btn btn-info" href="/webcron{{urlfor "TaskController.Edit"}}?id={{$v.id}}">
 							<span class="icon-pencil icon-white"></span> 编辑
 						</a>
-						<a class="btn btn-info btn-run" href="{{urlfor "TaskController.Run"}}?id={{$v.id}}">
+						<a class="btn btn-info btn-run" href="/webcron{{urlfor "TaskController.Run"}}?id={{$v.id}}">
 							<span class="icon-refresh icon-white"></span> 执行
 						</a>
-						<a class="btn btn-info" href="{{urlfor "TaskController.Logs"}}?id={{$v.id}}">
+						<a class="btn btn-info" href="/webcron{{urlfor "TaskController.Logs"}}?id={{$v.id}}">
 							<span class="icon-comments"></span> 日志
                        </a>					
 					</td>
@@ -126,7 +126,7 @@ function batch(action) {
 		$(".alert").text("请选择要操作的任务");
 		$(".alert").show();
 	} else {
-		var url = "{{urlfor "TaskController.Batch"}}";
+		var url = "/webcron{{urlfor "TaskController.Batch"}}";
 		$.post(url + "?action=" + action, $("#form-list").serialize(), function(out) {
 			if (out.status != 0) {
 				$(".alert").text(out.msg);
