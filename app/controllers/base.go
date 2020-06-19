@@ -75,10 +75,9 @@ func (this *BaseController) display(tpl ...string) {
 
 // 重定向
 func (this *BaseController) redirect(url string) {
-	if strings.HasPrefix(url,"http"){
+	if strings.HasPrefix(url,"http") {
 		tUrl=url
-	}
-	else{
+	} else {
 		tUrl="/webcron"+url
 	}
 	this.Redirect(tUrl, 302)
