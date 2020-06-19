@@ -1,6 +1,6 @@
 # webcron
 ------------
-##ONLY FOR K8S WITH INGRESS ENV##
+## ONLY FOR K8S ENV WITH INGRESS ##
 
 1.load db
 
