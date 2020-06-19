@@ -17,7 +17,7 @@
 
 ## 界面截图
 
-![webcron](https://raw.githubusercontent.com/lisijie/webcron/master/screenshot.png)
+![webcron](https://raw.githubusercontent.com/RyoLee/webcron/master/screenshot.png)
 
 
 ## 安装说明
@@ -26,7 +26,7 @@
 
 获取源码
 
-	$ go get github.com/lisijie/webcron
+	$ go get github.com/RyoLee/webcron
 	
 打开配置文件 conf/app.conf，修改相关配置。
 	
