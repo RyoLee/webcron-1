@@ -75,6 +75,7 @@ func (this *BaseController) display(tpl ...string) {
 
 // 重定向
 func (this *BaseController) redirect(url string) {
+	var tUrl string
 	if strings.HasPrefix(url,"http") {
 		tUrl=url
 	} else {
