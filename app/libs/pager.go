@@ -23,7 +23,7 @@ func NewPager(page, totalnum, pagesize int, url string, nopath ...bool) *Pager {
 	p.Pagesize = pagesize
 
 	arr := strings.Split(url, "?")
-	p.urlpath = arr[0]
+	p.urlpath = "/webcron"+arr[0]
 	if len(arr) > 1 {
 		p.urlquery = "?" + arr[1]
 	} else {
