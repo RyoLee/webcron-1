@@ -31,12 +31,12 @@ func main() {
 	beego.AppConfig.Set("version", VERSION)
 
 	// 路由设置
-	beego.Router("/webcron/", &controllers.MainController{}, "*:Index")
-	beego.Router("/webcron/login", &controllers.MainController{}, "*:Login")
-	beego.Router("/webcron/logout", &controllers.MainController{}, "*:Logout")
-	beego.Router("/webcron/profile", &controllers.MainController{}, "*:Profile")
-	beego.Router("/webcron/gettime", &controllers.MainController{}, "*:GetTime")
-	beego.Router("/webcron/help", &controllers.HelpController{}, "*:Index")
+	beego.Router("/", &controllers.MainController{}, "*:Index")
+	beego.Router("/login", &controllers.MainController{}, "*:Login")
+	beego.Router("/logout", &controllers.MainController{}, "*:Logout")
+	beego.Router("/profile", &controllers.MainController{}, "*:Profile")
+	beego.Router("/gettime", &controllers.MainController{}, "*:GetTime")
+	beego.Router("/help", &controllers.HelpController{}, "*:Index")
 	beego.AutoRouter(&controllers.TaskController{})
 	beego.AutoRouter(&controllers.GroupController{})
 
