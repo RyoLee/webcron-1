@@ -118,7 +118,7 @@ func (this *MainController) Profile() {
 // 登录
 func (this *MainController) Login() {
 	if this.userId > 0 {
-		this.redirect("/webcron/")
+		this.redirect("/")
 	}
 	beego.ReadFromRequest(&this.Controller)
 	if this.isPost() {

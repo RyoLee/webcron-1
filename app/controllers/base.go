@@ -75,7 +75,7 @@ func (this *BaseController) display(tpl ...string) {
 
 // 重定向
 func (this *BaseController) redirect(url string) {
-	this.Redirect(url, 302)
+	this.Redirect("/webcron"+url, 302)
 	this.StopRun()
 }
 
