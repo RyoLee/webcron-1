@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/astaxie/beego"
+	beego "github.com/beego/beego/v2/adapter"
 	"github.com/RyoLee/webcron/app/controllers"
 	"github.com/RyoLee/webcron/app/jobs"
 	_ "github.com/RyoLee/webcron/app/mail"

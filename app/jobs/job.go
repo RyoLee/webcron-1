@@ -3,7 +3,7 @@ package jobs
 import (
 	"bytes"
 	"fmt"
-	"github.com/astaxie/beego"
+	beego "github.com/beego/beego/v2/adapter"
 	"github.com/RyoLee/webcron/app/mail"
 	"github.com/RyoLee/webcron/app/models"
 	"html/template"
