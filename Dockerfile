@@ -1,5 +1,6 @@
 #FROM golang:alpine
 FROM ryosetsu/webcron:1.0
+#need be fixed
 
 ENV TZ Asia/Shanghai
 ENV GO111MODULE on
