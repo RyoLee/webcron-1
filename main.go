@@ -1,7 +1,7 @@
 package main
 
 import (
-	beego "github.com/beego/beego/v2/adapter"
+	"github.com/astaxie/beego"
 	"github.com/RyoLee/webcron/app/controllers"
 	"github.com/RyoLee/webcron/app/jobs"
 	_ "github.com/RyoLee/webcron/app/mail"
@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-const VERSION = "2.0.0"
+const VERSION = "1.0.0"
 
 func main() {
 	models.Init()

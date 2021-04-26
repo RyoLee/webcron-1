@@ -2,7 +2,7 @@ package jobs
 
 import (
 	"fmt"
-	beego "github.com/beego/beego/v2/adapter"
+	"github.com/astaxie/beego"
 	"github.com/RyoLee/webcron/app/models"
 	"os/exec"
 	"time"

@@ -2,7 +2,7 @@ package models
 
 import (
 	"fmt"
-	"github.com/beego/beego/v2/adapter/orm"
+	"github.com/astaxie/beego/orm"
 	"time"
 )
 

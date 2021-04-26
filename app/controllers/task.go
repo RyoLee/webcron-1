@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	beego "github.com/beego/beego/v2/adapter"
+	"github.com/astaxie/beego"
 	libcron "github.com/lisijie/cron"
 	"github.com/RyoLee/webcron/app/jobs"
 	"github.com/RyoLee/webcron/app/libs"
